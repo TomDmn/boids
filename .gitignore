@@ -1,0 +1,13 @@
+# Binaires compilés / exécutables
+*.exe
+*.out
+*.o
+a.out
+boids_reb
+
+# Archives
+*.zip
+
+# Cache Python
+__pycache__/
+*.pyc
