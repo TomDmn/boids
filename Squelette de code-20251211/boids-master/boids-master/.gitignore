@@ -1,7 +1,0 @@
-.idea
-cmake-build-*
-build
-build-debug
-bin
-lib
-.DS_Store
