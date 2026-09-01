@@ -32,13 +32,29 @@ explosent périodiquement.
 > exécutables), gardées telles quelles. Les fichiers les plus aboutis sont
 > `boids_v2.c` et `Projet final/boids_prédateur+bombe.c`.
 
-### Compilation (exemple)
-Nécessite **SDL2**.
+### Compilation
+
+Le code source est regroupé dans le dossier `boids-code/`.
+
+**Version de base** (`boids_v2.c`) — nécessite **SDL2** :
 ```bash
 gcc boids_v2.c -o boids -lSDL2 -lm
 ./boids
 ```
-Le code source est regroupé dans le dossier `boids-code/`.
+
+**Version prédateur + bombes** (`boids-code/boids_prédateur+bombe.c`) — nécessite
+en plus **SDL2_ttf** (rendu du texte FPS), et doit être compilée/lancée **depuis
+le dossier `boids-code/`** car elle charge la police `Open_Sans/...ttf` par un
+chemin relatif :
+```bash
+cd boids-code
+gcc "boids_prédateur+bombe.c" -o boids_pred -lSDL2 -lSDL2_ttf -lm
+./boids_pred
+```
+Sous Debian/Ubuntu, installez les dépendances avec :
+```bash
+sudo apt install libsdl2-dev libsdl2-ttf-dev
+```
 
 ---
 
@@ -72,10 +88,26 @@ explode periodically.
 > as they were. The most polished files are `boids_v2.c` and
 > `Projet final/boids_prédateur+bombe.c`.
 
-### Build (example)
-Requires **SDL2**.
+### Build
+
+The source code is grouped in the `boids-code/` folder.
+
+**Basic version** (`boids_v2.c`) — requires **SDL2**:
 ```bash
 gcc boids_v2.c -o boids -lSDL2 -lm
 ./boids
 ```
-The source code is grouped in the `boids-code/` folder.
+
+**Predator + bombs version** (`boids-code/boids_prédateur+bombe.c`) — also
+requires **SDL2_ttf** (FPS text rendering), and must be built/run **from inside
+the `boids-code/` folder** since it loads the `Open_Sans/...ttf` font through a
+relative path:
+```bash
+cd boids-code
+gcc "boids_prédateur+bombe.c" -o boids_pred -lSDL2 -lSDL2_ttf -lm
+./boids_pred
+```
+On Debian/Ubuntu, install the dependencies with:
+```bash
+sudo apt install libsdl2-dev libsdl2-ttf-dev
+```
