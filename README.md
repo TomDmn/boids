@@ -10,12 +10,14 @@ avec **SDL2**, basée sur les trois règles classiques de Reynolds :
 
 ### Aperçu
 
-Simulation lancée avec 1000 boids : on voit les nuées émerger au fil du temps
-(regroupement, alignement, évitement des collisions).
+Simulation lancée avec 1000 boids. À gauche, la version de base (les nuées
+s'organisent) ; à droite, la version finale avec un **prédateur** (le triangle
+rouge qui chasse les boids, ceux-ci fuient à son approche) et des **bombes** qui
+explosent périodiquement.
 
-| Nuées en formation | Nuées organisées |
+| Nuées (version de base) | Version prédateur + bombes |
 |:---:|:---:|
-| ![Boids en formation](images/boids_1.png) | ![Nuées de boids](images/boids_2.png) |
+| ![Nuées de boids](images/boids_2.png) | ![Boids avec prédateur et bombes](images/boids_pred.png) |
 
 ### Points techniques
 - Rendu temps réel avec SDL2 pour un grand nombre de boids (jusqu'à ~1000).
@@ -48,12 +50,14 @@ based on Reynolds' three classic rules: **cohesion**, **alignment** and
 
 ### Preview
 
-Simulation running with 1000 boids: the flocks emerge over time (grouping,
-alignment, collision avoidance).
+Simulation running with 1000 boids. On the left, the basic version (the flocks
+self-organize); on the right, the final version with a **predator** (the red
+triangle hunting the boids, which flee as it approaches) and **bombs** that
+explode periodically.
 
-| Flocks forming | Organized flocks |
+| Flocks (basic version) | Predator + bombs version |
 |:---:|:---:|
-| ![Boids forming](images/boids_1.png) | ![Boids flocks](images/boids_2.png) |
+| ![Boids flocks](images/boids_2.png) | ![Boids with predator and bombs](images/boids_pred.png) |
 
 ### Technical highlights
 - Real-time SDL2 rendering for a large number of boids (up to ~1000).
