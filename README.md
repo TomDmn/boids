@@ -23,34 +23,36 @@ explosent périodiquement.
 - Rendu temps réel avec SDL2 pour un grand nombre de boids (jusqu'à ~1000).
 - **Hachage spatial** (découpage de l'espace en cases) pour accélérer la recherche
   des voisins et éviter le coût quadratique.
-- Variantes plus avancées : ajout d'un **prédateur** et d'une **« bombe »**
-  (`boids_prédateur+bombe.c`).
-- Prototypes et expérimentations également en **Python** (`boids.py`, `boids_rebond.py`…).
+- Version finale avec **prédateur** et **bombes**, en arithmétique à virgule fixe
+  (`src/boids_predateur_bombe.c`).
 
-> **Dossier de travail en l'état.** Ce repo rassemble plusieurs versions
-> successives et expérimentations (différents `.c`, scripts Python, archives,
-> exécutables), gardées telles quelles. Les fichiers les plus aboutis sont
-> `boids_v2.c` et `Projet final/boids_prédateur+bombe.c`.
+### Structure
+- **`src/`** — les deux fichiers finaux : `boids_v2.c` (version de base) et
+  `boids_predateur_bombe.c` (version complète, prédateur + bombes), ainsi que la
+  police utilisée pour l'affichage du FPS.
+- **`archive/`** — versions intermédiaires et expérimentations Python/C
+  conservées à titre d'historique (voir [`archive/README.md`](archive/README.md)
+  pour le détail de chaque fichier).
 
 ### Compilation
 
-Le code source est regroupé dans le dossier `boids-code/`.
-
-**Version de base** (`boids_v2.c`) — nécessite **SDL2** :
+**Version de base** (`src/boids_v2.c`) — nécessite **SDL2** :
 ```bash
+cd src
 gcc boids_v2.c -o boids -lSDL2 -lm
 ./boids
 ```
 
-**Version prédateur + bombes** (`boids-code/boids_prédateur+bombe.c`) — nécessite
-en plus **SDL2_ttf** (rendu du texte FPS), et doit être compilée/lancée **depuis
-le dossier `boids-code/`** car elle charge la police `Open_Sans/...ttf` par un
-chemin relatif :
+**Version prédateur + bombes** (`src/boids_predateur_bombe.c`) — nécessite en
+plus **SDL2_ttf** (rendu du texte FPS), et doit être compilée/lancée **depuis
+le dossier `src/`** car elle charge la police `Open_Sans/...ttf` par un chemin
+relatif :
 ```bash
-cd boids-code
-gcc "boids_prédateur+bombe.c" -o boids_pred -lSDL2 -lSDL2_ttf -lm
+cd src
+gcc boids_predateur_bombe.c -o boids_pred -lSDL2 -lSDL2_ttf -lm
 ./boids_pred
 ```
+
 Sous Debian/Ubuntu, installez les dépendances avec :
 ```bash
 sudo apt install libsdl2-dev libsdl2-ttf-dev
@@ -79,34 +81,36 @@ explode periodically.
 - Real-time SDL2 rendering for a large number of boids (up to ~1000).
 - **Spatial hashing** (grid partitioning) to speed up neighbor lookup and avoid
   the quadratic cost.
-- More advanced variants: a **predator** and a **"bomb"**
-  (`boids_prédateur+bombe.c`).
-- Prototypes and experiments in **Python** as well (`boids.py`, `boids_rebond.py`…).
+- Final version with a **predator** and **bombs**, using fixed-point arithmetic
+  (`src/boids_predateur_bombe.c`).
 
-> **Working folder, as-is.** This repo gathers several successive versions and
-> experiments (various `.c` files, Python scripts, archives, executables), kept
-> as they were. The most polished files are `boids_v2.c` and
-> `Projet final/boids_prédateur+bombe.c`.
+### Structure
+- **`src/`** — the two final files: `boids_v2.c` (basic version) and
+  `boids_predateur_bombe.c` (full version, predator + bombs), plus the font
+  used for the FPS display.
+- **`archive/`** — intermediate versions and Python/C experiments kept for
+  historical reference (see [`archive/README.md`](archive/README.md) for a
+  breakdown of each file).
 
 ### Build
 
-The source code is grouped in the `boids-code/` folder.
-
-**Basic version** (`boids_v2.c`) — requires **SDL2**:
+**Basic version** (`src/boids_v2.c`) — requires **SDL2**:
 ```bash
+cd src
 gcc boids_v2.c -o boids -lSDL2 -lm
 ./boids
 ```
 
-**Predator + bombs version** (`boids-code/boids_prédateur+bombe.c`) — also
-requires **SDL2_ttf** (FPS text rendering), and must be built/run **from inside
-the `boids-code/` folder** since it loads the `Open_Sans/...ttf` font through a
-relative path:
+**Predator + bombs version** (`src/boids_predateur_bombe.c`) — also requires
+**SDL2_ttf** (FPS text rendering), and must be built/run **from inside the
+`src/` folder** since it loads the `Open_Sans/...ttf` font through a relative
+path:
 ```bash
-cd boids-code
-gcc "boids_prédateur+bombe.c" -o boids_pred -lSDL2 -lSDL2_ttf -lm
+cd src
+gcc boids_predateur_bombe.c -o boids_pred -lSDL2 -lSDL2_ttf -lm
 ./boids_pred
 ```
+
 On Debian/Ubuntu, install the dependencies with:
 ```bash
 sudo apt install libsdl2-dev libsdl2-ttf-dev
