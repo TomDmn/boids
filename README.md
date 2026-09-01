@@ -8,6 +8,15 @@ Simulation de **boids** (nuées d'oiseaux/poissons) écrite principalement en **
 avec **SDL2**, basée sur les trois règles classiques de Reynolds :
 **cohésion**, **alignement** et **séparation**.
 
+### Aperçu
+
+Simulation lancée avec 1000 boids : on voit les nuées émerger au fil du temps
+(regroupement, alignement, évitement des collisions).
+
+| Nuées en formation | Nuées organisées |
+|:---:|:---:|
+| ![Boids en formation](images/boids_1.png) | ![Nuées de boids](images/boids_2.png) |
+
 ### Points techniques
 - Rendu temps réel avec SDL2 pour un grand nombre de boids (jusqu'à ~1000).
 - **Hachage spatial** (découpage de l'espace en cases) pour accélérer la recherche
@@ -36,6 +45,15 @@ Le code source est regroupé dans le dossier `boids-code/`.
 A **boids** (bird/fish flocking) simulation written mainly in **C** with **SDL2**,
 based on Reynolds' three classic rules: **cohesion**, **alignment** and
 **separation**.
+
+### Preview
+
+Simulation running with 1000 boids: the flocks emerge over time (grouping,
+alignment, collision avoidance).
+
+| Flocks forming | Organized flocks |
+|:---:|:---:|
+| ![Boids forming](images/boids_1.png) | ![Boids flocks](images/boids_2.png) |
 
 ### Technical highlights
 - Real-time SDL2 rendering for a large number of boids (up to ~1000).
